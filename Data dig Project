@@ -1,0 +1,55 @@
+/* Put your data in here and query it! */
+CREATE TABLE meme_rankings
+(id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT,rating INTEGER,release_year INTEGER);
+
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("Spongegar" , 10, 2016);
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("Haircut Monkey" , 3, 2017);
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("What you see vs what shee sees" , 8, 2017);
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("PaTrIcK" , 7, 2017);
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("Tide pods" , 6, 2017);
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("SPAGETT" , 9, 2018);
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("Logan Paul" , 6, 2018);
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("Harambe" , 2, 2016);
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("Nut Button" , 8.5, 2017);
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("Bee Movie" , 7, 2016);
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("Spongegar" , 10, 2015);
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("Pawn Shop" , 7, 2016);
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("Rage Comics" , 5, 2012);
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("ROADMAN SHAQ" , 10, 2017);
+INSERT INTO meme_rankings (name, rating, release_year) VALUES ("DO U KNOW DA WAY" , 8.2, 2018);
+
+SELECT * FROM meme_rankings;
+SELECT AVG(rating) FROM meme_rankings GROUP BY name;
+SELECT MAX(rating) FROM meme_rankings GROUP BY name;
+SELECT MIN(rating)FROM meme_rankings GROUP BY name;
+SELECT *FROM meme_rankings WHERE release_year>1990 ORDER BY release_year;
+SELECT *FROM meme_rankings WHERE release_year <1990
+AND RATING >9;
+SELECT name FROM meme_rankings WHERE NAME="THE" OR RATING >9;
+SELECT NAME,SUM(RATING) AS GIVEN_RATING FROM meme_rankings GROUP BY name
+HAVING RATING > 8.8;
+SELECT NAME,
+CASE 
+WHEN RATING>8.5 THEN"HIT"
+WHEN RATING>9 THEN"BLOCK_BUSTER"
+WHEN RATING<8.5 THEN "AVERAGE"
+ELSE "NOT BAD"
+END AS "IGN_RATING"
+FROM meme_rankings
+GROUP BY "IGN_RATING";
+SELECT COUNT(*),
+CASE 
+WHEN RATING>8.5 THEN"HIT"
+WHEN RATING>9 THEN"BLOCK_BUSTER"
+WHEN RATING<8.5 THEN "AVERAGE"
+ELSE "NOT BAD"
+END AS "IGN_RATING"
+FROM meme_rankings
+GROUP BY "IGN_RATING";
+
+
+
+
+
+
