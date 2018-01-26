@@ -1,0 +1,36 @@
+/* What does the app's SQL look like? */
+
+/* What does the app's SQL look like? */
+
+CREATE TABLE games (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    genre TEXT);
+    
+INSERT INTO games (name, genre)
+    VALUES ("Metal Gear Solid V", "Stealth-Based Shooter");
+INSERT INTO games (name, genre)
+    VALUES ("CoD Black Ops 2", "First Person Shooter");
+INSERT INTO games (name, genre)
+    VALUES ("Star Wars: Battlefront", "First Person Shooter");
+    INSERT INTO games (name, genre)
+    VALUES ("DotA 2", "MOBA");
+
+alter table games add rating integer;
+
+select * from games;
+
+update games set rating = "9" where id=1;
+update games set rating = "8.5" where id=2;
+update games set rating = "7.5" where id=3;
+update games set rating = "8" where id =4;
+
+select * from games;
+
+insert into games (name, genre, rating)
+    VALUES ("CS:GO", "First Person Shooter", 10);
+select * from games;
+
+DELETE FROM games WHERE id=3;
+
+select * FROM games;
