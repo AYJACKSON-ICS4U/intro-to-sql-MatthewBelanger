@@ -1,0 +1,56 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE players (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, team TEXT, birthday TEXT);
+
+INSERT INTO players (name, team, birthday) VALUES("Olofmeister", "Faze", "January 31, 1992");
+INSERT INTO players (name, team, birthday) VALUES("Flusha", "GODSENT", "August 12, 1993");
+INSERT INTO players (name, team, birthday) VALUES("Get_Right", "NiP", "May 29, 1990");
+INSERT INTO players (name, team, birthday) VALUES("f0rest", "NiP", "June 10, 1988");
+INSERT INTO players (name, team, birthday) VALUES("pasha", "VP", "April 11, 1988");
+INSERT INTO players (name, team, birthday) VALUES("snax", "VP", "July 5, 1993 ");
+INSERT INTO players (name, team, birthday) VALUES("Karrigan", "Faze", "April 14, 1990  ");
+INSERT INTO players (name, team, birthday) VALUES("dupreeh", "Astralis", "March 26, 1993");
+INSERT INTO players (name, team, birthday) VALUES("KennyS", "G2", "May 19, 1995");
+INSERT INTO players (name, team, birthday) VALUES("Kioshima", "EnvyUs", "July 26, 1994");
+
+CREATE TABLE teams (id INTEGER PRIMARY KEY AUTOINCREMENT, team_id INTEGER, name TEXT);
+
+INSERT INTO teams (team_id, name) VALUES (1, "NiP");
+INSERT INTO teams (team_id, name) VALUES (2, "Faze");
+INSERT INTO teams (team_id, name) VALUES (3, "G2");
+INSERT INTO teams (team_id, name) VALUES (4, "Astralis");
+INSERT INTO teams (team_id, name) VALUES (5, "GODSENT");
+INSERT INTO teams (team_id, name) VALUES (6, "VP");
+INSERT INTO teams (team_id, name) VALUES (7, "EnvyUs");
+
+CREATE TABLE star_players (id INTEGER PRIMARY KEY, player_id INTEGER, team_id INTEGER);
+
+INSERT INTO star_players (player_id, team_id) VALUES (1, 2);
+INSERT INTO star_players (player_id, team_id) VALUES (2, 5);
+INSERT INTO star_players (player_id, team_id) VALUES (3,1);
+INSERT INTO star_players (player_id, team_id) VALUES (4, 1);
+INSERT INTO star_players (player_id, team_id) VALUES (5, 6);
+INSERT INTO star_players (player_id, team_id) VALUES (6, 6);
+INSERT INTO star_players (player_id, team_id) VALUES (7, 4);
+INSERT INTO star_players (player_id, team_id) VALUES (8, 4);
+INSERT INTO star_players (player_id, team_id) VALUES (9, 3);
+INSERT INTO star_players (player_id, team_id) VALUES (10, 7);
+
+
+SELECT a.name, b.name FROM star_players
+    JOIN players as a
+    ON a.id = star_players.player_id
+    JOIN teams as b
+    ON b.team_id = star_players.team_id;
+
+
+
+
+
+
+
+
+
+
+
+
