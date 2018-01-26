@@ -1,0 +1,21 @@
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, author TEXT, price INTEGER, code INTEGER);
+
+INSERT INTO store VALUES (1, "rylan's heart", "L-dad", 200, 000);
+INSERT INTO store VALUES (2, "Rylan's arm", "L-dad", 1, 111);
+INSERT INTO store VALUES (3, "Rylan's Leg", "L-dad", 2, 111);
+INSERT INTO store VALUES (4, "Rylan's eyes", "L-dad", 235, 111);
+INSERT INTO store VALUES (5, "RYlan's nails", "L-dad", 33, 000);
+INSERT INTO store VALUES (6, "Rylan's Hat", "L-dad", 333, 111);
+INSERT INTO store VALUES (7, "Rylan's nice toes ", "L-dad", 200, 111);
+INSERT INTO store VALUES (8, "Rylan's nice nips", "L-dad", 6345, 000);
+INSERT INTO store VALUES (9, "Rye-bread  ", "L-dad", 11, 111);
+INSERT INTO store VALUES (10, "Rylan's Rye-bread", "L-dad", 213, 500);
+INSERT INTO store VALUES (11, "Ryebread's rye-bread", "L-dad", 223, 111);
+INSERT INTO store VALUES (12, "Rylan's behind ", "L-dad", 432, 300);
+INSERT INTO store VALUES (13, "Rylan's shoe ", "L-dad", 2234, 000);
+INSERT INTO store VALUES (14, "Rylan's nose ", "L-dad", 765, 020);
+INSERT INTO store VALUES (15, "Rylan's BRAIN ", "L-dad", 97, 111);
+
+SELECT name FROM store ORDER BY price;
+SELECT * FROM store WHERE price >= 300;
+SELECT code, SUM(price) FROM store GROUP BY code;
